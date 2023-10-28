@@ -1,0 +1,19 @@
+{# templates/book/listebook.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Liste des livres</h1>
+    
+    <form method="get" action="{{ path('listebook') }}">
+        <label for="ref">Rechercher par référence :</label>
+        <input type="text" id="ref" name="ref" value="{{ app.request.query.get('ref') }}" />
+        <button type="submit">Rechercher</button>
+    </form>
+    
+    <ul>
+        {% for b in books %}
+            <li>{{ b.ref }} - {{ b.title }} par {{ b.author }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

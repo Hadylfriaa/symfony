@@ -1,0 +1,26 @@
+{# templates/book/booksBefore2023MoreThan35.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Liste des livres publiés avant 2023 dont l'auteur a plus de 35 livres</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>author</th>
+                <th>publicationDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in book %}
+                <tr>
+                    <td>{{ b.title }}</td>
+                    <td>{{ b.author.username }} </td>
+                    <td>{{ b.publicationDate }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

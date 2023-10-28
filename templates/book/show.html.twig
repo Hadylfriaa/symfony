@@ -1,0 +1,22 @@
+<table border="3">
+    <tr>
+        <td>ref</td>
+        <td>title</td>
+        <td>category</td>
+        <td>published</td>
+        <td>publicationDate</td>
+        <td>Action</td>
+        
+    </tr>
+    {% for b in books %}
+    <tr>
+        <td>{{b.ref}}</td>
+        <td>{{b.title | upper}}</td>
+        <td>{{b.category}}</td>
+        <td>{{b.publicationDate}}</td>
+        <td>{{b.published}}</td>
+        <td><a href="{{path('editbook',{'ref':b.ref})}}">edit</a></td>
+        <td><a href="{{path('deleteauthor',{'ref':b.ref})}}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>

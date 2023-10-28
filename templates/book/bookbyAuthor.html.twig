@@ -1,0 +1,12 @@
+{# templates/book/bookbyAuthor.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Liste des livres triés par auteur</h1>
+    <ul>
+        {% for b in books %}
+            <li>{{ b.title }} par {{ b.author }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

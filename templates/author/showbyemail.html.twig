@@ -1,0 +1,12 @@
+
+
+{# templates/auteur/liste.html.twig #}
+
+{% extends 'base.html.twig' %}{% block content %}
+    <h1>Liste des auteurs par ordre alphabétique des adresses email</h1>
+    <ul>
+        {% for auteur in auteurs %}
+            <li>{{ auteur.email }} - {{ auteur.nom }} {{ auteur.prenom }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
